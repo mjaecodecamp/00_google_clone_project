@@ -1,0 +1,110 @@
+.main {
+  position: relative;
+  min-height: calc(100vh - 198px);
+
+  &-search {
+    &-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-logo {
+      width: 200px;
+      height: auto;
+
+      &-container {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    &-input {
+      width: 100%;
+      padding: 15px 110px 15px 35px;
+      box-sizing: border-box;
+      border: 1px solid #eee;
+      border-radius: 50px;
+      transition: all .2s;
+
+      &:hover,
+      &:active,
+      &:focus {
+        box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
+      }
+
+      &-container {
+        width: 600px;
+        position: relative;
+      }
+
+      &-button {
+        width: 20px;
+        height: 20px;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        $icons: (keyboard, mic, camera);
+        @each $icon in $icons {
+          &.#{$icon} {
+            background: url("../../assets/icons/icon-#{$icon}.svg") no-repeat center center / contain;
+          }
+        }
+
+        &-container {
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    &-button {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      padding: 0;
+      border: none;
+      background: url("../../assets/icons/icon-search.svg") no-repeat center center / contain;
+    }
+  }
+
+  &-gray-button {
+    max-width: max-content;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 6px;
+    color: #222;
+    cursor: pointer;
+    border: 1px solid #f8f9fa;
+
+    &:hover {
+      border: 1px solid #ccc;
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}
